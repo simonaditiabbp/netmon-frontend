@@ -134,10 +134,10 @@ export default function UpdateDevicePage({ params }) {
               ))}
             </div>
           </div>
-          <div>
+          {/* <div>
             <label className="block mb-1 font-medium text-gray-700">URL</label>
             <input name="url" value={form.url} onChange={handleChange} className="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-200" />
-          </div>
+          </div> */}
           {error && <div className="text-red-500 mb-2 text-center">{error}</div>}
           <button type="submit" className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition" disabled={loading}>
             {loading ? "Saving..." : "Update Device"}

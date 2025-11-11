@@ -61,7 +61,26 @@ export default function DevicesDataTable({ devices, filterText, onDelete }) {
     { name: "Status", selector: row => row.Status, sortable: true, width: "250px", 
         cell: row => <span className="text-base">{row.Status}</span>
      },
-    { name: "Icon", selector: row => row.Icon, sortable: false, cell: row => <span className="text-base">{row.Icon}</span> , width: "250px" },
+    {
+      name: "Device Type",
+      selector: row => row.types?.map(t => t.type_name).join(", "),
+      sortable: false,
+      width: "300px",
+      cell: row => (
+        <div className="flex flex-wrap gap-2">
+          {Array.isArray(row.types) && row.types.length > 0 ? (
+            row.types.map(t => (
+              <span key={t.ID} className="flex items-center gap-1 px-2 py-1 rounded bg-gray-100 text-gray-800 text-sm">
+                <span className="text-lg">{t.Icon}</span>
+                <span>{t.type_name}</span>
+              </span>
+            ))
+          ) : (
+            <span className="text-gray-400">-</span>
+          )}
+        </div>
+      )
+    },
     {
       name: "Action",
       cell: row => (
