@@ -148,7 +148,7 @@ export default function DevicesDataTable({ devices, filterText, onDelete }) {
       <ConfirmModal
         open={modalOpen}
         title="Delete Device"
-        message={selectedDevice ? `Are you sure you want to delete device '${selectedDevice.Name}'?` : ""}
+        message={selectedDevice ? `Are you sure you want to delete device:\n${selectedDevice.Name}\n${selectedDevice.IP}` : ""}
         onConfirm={handleConfirmDelete}
         onCancel={handleCancelDelete}
       />

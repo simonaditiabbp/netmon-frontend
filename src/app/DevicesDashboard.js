@@ -91,7 +91,6 @@ export default function DevicesDashboard() {
 return (
     <div className="min-h-screen flex flex-col bg-gray-50 font-sans">
         <PageHeader
-          title="📊 Devices Monitoring Dashboard"
           buttonLabel="Manage Devices"
           buttonHref="/devices"
           lastUpdate={lastUpdate}

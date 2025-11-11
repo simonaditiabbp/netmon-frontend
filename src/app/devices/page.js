@@ -31,12 +31,11 @@ export default function DevicesDataPage() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center font-sans">
       <PageHeader
-        title="📊 Devices Monitoring Dashboard"
         buttonLabel="Dashboard"
         buttonHref="/"
         lastUpdate={lastUpdate}
       />
-      <div className="bg-white border border-gray-200 rounded-xl shadow-md p-8 w-full max-w-[1600px] flex flex-col">
+      <div className="bg-white border border-gray-200 rounded-xl shadow-md p-8 w-full max-w-[1600px] flex flex-col mb-10">
         <h1 className="text-3xl font-bold mb-6 text-center">Devices Data</h1>
         {loading ? (
           <div className="text-center">Loading...</div>
