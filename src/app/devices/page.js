@@ -37,23 +37,21 @@ export default function DevicesDataPage() {
       />
       <div className="bg-white border border-gray-200 rounded-xl shadow-md p-8 w-full max-w-[1600px] flex flex-col mb-10">
         <h1 className="text-3xl font-bold mb-6 text-center">Devices Data</h1>
+        <div className="mb-6 flex flex-row items-center justify-between gap-4">
+          <Link href="/devices/insert" className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition">Insert Device</Link>
+          <input
+            type="text"
+            placeholder="Search..."
+            className="border px-2 py-1 rounded w-full max-w-xs flex-1"
+            value={filterText}
+            onChange={e => setFilterText(e.target.value)}
+          />            
+        </div>
         {loading ? (
           <div className="text-center">Loading...</div>
         ) : error ? (
           <div className="text-red-500 text-center">{error}</div>
-        ) : (
-          <div className="mb-6 flex flex-row items-center justify-between gap-4">
-            <Link href="/devices/insert" className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition">Insert Device</Link>
-            <input
-              type="text"
-              placeholder="Search..."
-              className="border px-2 py-1 rounded w-full max-w-xs flex-1"
-              value={filterText}
-              onChange={e => setFilterText(e.target.value)}
-            />            
-          </div>
-        )}
-        {!loading && !error && (
+        ) : (          
           <DevicesDataTable devices={devices} filterText={filterText} onDelete={fetchDevices} />
         )}
       </div>

@@ -205,9 +205,10 @@ return (
                         data-status={d.Status}
                         >
                         <div className="flex items-start space-x-3">
-                            <div className="flex items-center justify-center w-[38px] h-[38px] rounded-[10px] bg-indigo-100 text-[1.2rem]">
-                            {d.Icon}
-                            </div>
+                              <div className="flex items-center justify-center w-[38px] h-[38px] rounded-[10px] bg-indigo-100 text-[1.2rem]">
+                                {/* Show only the first type's icon if available */}
+                                {Array.isArray(d.types) && d.types.length > 0 ? d.types[0].Icon : null}
+                              </div>
                             <div className="flex flex-col">
                             <h2 className="font-semibold text-gray-800 leading-tight text-[15px]">
                                 {d.Name}
